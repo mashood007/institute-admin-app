@@ -24,8 +24,13 @@ export default function Login({ setToken }) {
       username,
       password
     });
-    setToken(data.token);
-    window.location.href = '/';
+    if (data.token.length > 0) {
+      setToken(data.token);
+    } else {
+      alert('login failed')
+    }
+
+  //  window.location.href = '/';
   }
 
   return(

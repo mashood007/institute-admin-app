@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Logout from './Login'
-import Login from './Logout'
+import Logout from './Logout'
+import Login from './Login'
 import Course from './Course'
 import Student from './Student'
 import Category from './Category'
@@ -36,6 +36,7 @@ function App() {
                <Link to="/courses" className="nav-item">Courses</Link> |
                <Link to="/categories" className="nav-item">Categories</Link> |
                <Link to="/questions" className="nav-item">Questions</Link> |
+               <Logout />
             </ul>
           </div>
         </nav>

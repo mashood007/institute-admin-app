@@ -3,15 +3,13 @@ import React, { Component } from 'react'
 
 export default class Logout extends Component {
   logout = () => {
-      //sessionStorage.removeItem("userToken");
-      //sessionStorage.clear();
+      sessionStorage.removeItem("token");
+      sessionStorage.clear();
   }
 
   render() {
       return (
-          <div>
-            <button type='button' onClick={this.logout}>Log Out</button>
-          </div>
+            <button type='button' className='btn btn-danger nav-item btn-sm' onClick={this.logout}>Log Out</button>
       )
     }
   }
