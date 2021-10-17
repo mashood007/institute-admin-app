@@ -24,29 +24,32 @@ export default function Login({ setToken }) {
       username,
       password
     });
-    if (data.token.length > 0) {
+    if (data.token) {
       setToken(data.token);
+      window.location.href = '/';
     } else {
       alert('login failed')
     }
-
-  //  window.location.href = '/';
   }
 
   return(
-    <div className="login-wrapper">
-      <h1>Please Log In</h1>
+    <div className="login-wrapper container mt-5 text-center">
+      <h1>Please Sign In</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          <p>Email</p>
-          <input type="text" onChange={e => setUserName(e.target.value)} />
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)} />
-        </label>
-        <div>
-          <button type="submit">Submit</button>
+        <div className='row'>
+          <label className="form-group">
+            <p>Email</p>
+            <input className='form-control' type="text" onChange={e => setUserName(e.target.value)} />
+          </label>
+        </div>
+        <div className='row'>
+          <label className="form-group">
+            <p>Password</p>
+            <input className='form-control' type="password" onChange={e => setPassword(e.target.value)} />
+          </label>
+        </div>
+        <div className='col-sm-12 mt-2'>
+          <button className='btn btn-primary ' type="submit">Sign in</button>
         </div>
       </form>
     </div>

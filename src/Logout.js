@@ -5,6 +5,7 @@ export default class Logout extends Component {
   logout = () => {
       sessionStorage.removeItem("token");
       sessionStorage.clear();
+      window.location.href = '/';
   }
 
   render() {
